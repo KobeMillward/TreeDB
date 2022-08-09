@@ -1,5 +1,5 @@
 ﻿namespace TreeDBNS {
-    interface INode {
+    public interface INode {
         IComparable getKey();
         Object? getData();
         INode? getLChild();

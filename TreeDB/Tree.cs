@@ -1,5 +1,5 @@
 ﻿namespace TreeDBNS {
-    class Tree : ITree {
+    public class Tree : ITree {
         private string name;
         private INode? root;
         
@@ -17,7 +17,8 @@
 
         public bool addNode(IComparable key, INode root) {
             if (root == null) {
-                root = new Node(key);
+                this.root = new Node(key);
+                return true;
             }
             if (key.CompareTo(root.getKey()) < 0) {
                 return addNode(key, root.getLChild());
@@ -30,7 +31,8 @@
 
         public bool addNode(IComparable key, Object data, INode root) {
             if (root == null) {
-                root = new Node(key, data);
+                this.root = new Node(key, data);
+                return true;
             }
             if (key.CompareTo(root.getKey()) < 0) {
                 return addNode(key, root.getLChild());
