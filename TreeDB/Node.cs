@@ -1,5 +1,5 @@
 ﻿namespace TreeDBNS {
-    class Node : INode {
+    public class Node : INode {
         private IComparable key;
         private Object? data;
         private Node? LChild;
@@ -22,12 +22,37 @@
             return this.data;
         }
 
+        public bool setData(Object data) {
+            this.data = data;
+            return true;
+        }
+
         public INode? getLChild() {
             return this.LChild;
         }
 
+        public bool setLChild(Node node) {
+            this.LChild = node;
+            return true;
+        }
+
+        public bool setLChild(IComparable key) {
+            this.LChild = new Node(key);
+            return true;
+        }
+
+        public bool setLChild(IComparable key, Object data) {
+            this.LChild = new Node(key, data);
+            return true;
+        }
+
         public INode? getRChild() {
             return this.RChild;
+        }
+
+        public bool setRChild(INode node) {
+            this.RChild = (Node)node;
+            return true;
         }
     }
 }

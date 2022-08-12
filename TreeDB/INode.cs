@@ -1,8 +1,11 @@
 ﻿namespace TreeDBNS {
     public interface INode {
-        IComparable getKey();
-        Object? getData();
-        INode? getLChild();
-        INode? getRChild();
+        public IComparable getKey();
+        public Object? getData();
+        public bool setData();
+        public INode? getLChild();
+        public bool setLChild();
+        public INode? getRChild();
+        public bool setRChild(INode node);
     }
 }
