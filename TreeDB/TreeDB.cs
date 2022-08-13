@@ -29,6 +29,20 @@
             return true;
         }
 
+        public bool setActive(string name) {
+            foreach (Tree tree in trees) {
+                if (name.Equals(tree.getName())) {
+                    this.active = tree;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public string getActiveName() {
+            return this.active.getName();
+        }
+
         public bool addNode(IComparable key) {
             return active.addNode(key, active.getRoot());
         }

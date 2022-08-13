@@ -1,5 +1,5 @@
 ﻿namespace TreeDBNS {
-    interface ITree {
+    public interface ITree {
         INode getRoot();
         bool addNode(IComparable key, INode root);
     }
